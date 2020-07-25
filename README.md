@@ -1,3 +1,7 @@
+## What’s love got to-do.
+
+Make a to-do list app. You should be able to add and remove items.<br />
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
