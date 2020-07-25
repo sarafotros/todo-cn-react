@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import InputBox from './components/InputBox';
+import BtnApp from './components/BtnApp';
+import Card from './components/Card';
+
+class App extends Component {
+  state = {
+    inpValue: '',
+    todoList: [],
+  };
+  handelChangeInput = (e) => {
+    this.setState({
+      inpValue: e.target.value,
+    });
+  };
+  handleSubmitBtn = () => {
+    this.setState({
+      todoList: [...this.state.todoList, this.state.inpValue],
+      inpValue: '',
+    });
+  };
+  handleTaskDelete = (allTodo) => {
+    const filtered = this.state.todoList.filter((td) => td !== allTodo);
+    this.setState({
+      todoList: filtered,
+    });
+  };
+  render() {
+    return (
+      <div className='App'>
+        <div className='heading'>
+          <h2>What’s love got to-do</h2>
+        </div>
+        <div className='inp-btn'>
+          <InputBox
+            placeholderPrp='Add A New Task'
+            onChangeProp={this.handelChangeInput}
+            valueProp={this.state.inpValue}
+          />
+          <BtnApp onSubmitBtn={this.handleSubmitBtn} />
+        </div>
+        <p>new task:{this.state.inpValue}</p>
+        {this.state.todoList.map((todo) => (
+          <Card todoProp={todo} btnDelete={() => this.handleTaskDelete(todo)} />
+        ))}
+      </div>
+    );
+  }
 }
 
 export default App;
