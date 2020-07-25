@@ -8,7 +8,7 @@ import Card from './components/Card';
 class App extends Component {
   state = {
     inpValue: '',
-    todoList: [],
+    todoList: ['task2'],
   };
   handelChangeInput = (e) => {
     this.setState({
@@ -41,7 +41,7 @@ class App extends Component {
           />
           <BtnApp onSubmitBtn={this.handleSubmitBtn} />
         </div>
-        <p>new task:{this.state.inpValue}</p>
+        <p>new task: {this.state.inpValue}</p>
         {this.state.todoList.map((todo) => (
           <Card todoProp={todo} btnDelete={() => this.handleTaskDelete(todo)} />
         ))}

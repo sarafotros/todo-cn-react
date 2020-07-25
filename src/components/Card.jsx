@@ -1,4 +1,6 @@
 import React from 'react';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+
 const taskStyle = {
   backgroundColor: '#e7b9ff',
   display: 'flex',
@@ -16,7 +18,7 @@ const taskStyle = {
   paddingLeft: 24,
 };
 const btnStyle = {
-  backgroundColor: '#c1d5e0',
+  backgroundColor: '#a7c0cd',
   width: '20%',
   fontFamily: 'Rubik',
   fontSize: 20,
@@ -30,7 +32,11 @@ const btnStyle = {
 export default function Card({ todoProp, btnDelete }) {
   return (
     <div style={taskStyle}>
-      <h3>{todoProp}</h3>
+      <h3>
+        {' '}
+        <AddCircleOutlineIcon style={{ marginRight: 8, fontSize: 26 }} />
+        {todoProp}
+      </h3>
       <button style={btnStyle} onClick={btnDelete}>
         Delete
       </button>
