@@ -5,7 +5,7 @@ const inputStyle = {
   width: '50%',
   margin: 20,
   height: 70,
-  boxShadow: '10px 10px 10px -5px rgba(128,124,128,0.67)',
+  boxShadow: '10px 10px 8px 2px rgba(128,124,128,0.67)',
   border: 'none',
   borderRadius: '6px',
   fontFamily: 'Rubik',

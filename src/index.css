@@ -19,7 +19,7 @@ html {
   /* text-decoration: none; */
 }
 .heading {
-  height: 12%;
+  height: 16%;
   width: 100%;
   background-color: #805acb;
   display: flex;
@@ -38,7 +38,7 @@ p {
 }
 .inp-btn {
   width: 100%;
-  height: 20%;
+  height: 24%;
   /* background-color: rgb(245, 191, 250); */
   display: flex;
   align-items: center;
